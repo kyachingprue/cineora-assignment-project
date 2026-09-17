@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { ArrowRight, Tv } from 'lucide-react'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import MovieCard from '../movies/MovieCard'
 
 const fallbackShows = [
@@ -86,13 +86,14 @@ const fallbackShows = [
   }
 ]
 
-const ExploreVideoSeries = ({ shows = [], onDetails }) => {
-  const displayShows = shows.length > 0 ? shows.slice(0, 10) : fallbackShows
+const ExploreVideoSeries = ({ shows = []}) => {
+   const navigate = useNavigate()
+
+   const displayShows = shows.length > 0 ? shows.slice(0, 10) : fallbackShows
 
   return (
     <section className="relative overflow-hidden bg-slate-950 py-20 sm:py-24">
-
-     {/* ---> Cinematic Background <--- */}
+      {/* ---> Cinematic Background <--- */}
 
       {/* Main gradient */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet-950/50 via-slate-950 to-fuchsia-950/40" />
@@ -123,7 +124,6 @@ const ExploreVideoSeries = ({ shows = [], onDetails }) => {
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-
         {/* Section Header */}
 
         <motion.div
@@ -196,7 +196,10 @@ const ExploreVideoSeries = ({ shows = [], onDetails }) => {
                   delay: index * 0.06
                 }}
               >
-                <MovieCard movie={show} onDetails={onDetails} />
+                <MovieCard
+                  movie={show}
+                  onDetails={() => navigate(`/movies/${show.id}`)}
+                />
               </motion.div>
             ))}
           </div>
