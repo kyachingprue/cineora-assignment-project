@@ -17,7 +17,6 @@ const Footer = () => {
       {/* Background Glow */}
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-violet-600/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-fuchsia-600/10 blur-3xl" />
-
       <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
         {/* Top Footer Content */}
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">

@@ -1,6 +1,6 @@
 const BASE_URL = 'https://api.tvmaze.com'
 
-// All Movies Shows API 
+// All Movies Shows API
 export const getAllShows = async () => {
   const response = await fetch(`${BASE_URL}/shows`)
 
@@ -29,9 +29,6 @@ export const searchShows = async query => {
   }
 
   const data = await response.json()
-
-  // TVMaze search response:
-  // [{ score, show }, { score, show }, ...]
 
   return data.map(item => item.show)
 }

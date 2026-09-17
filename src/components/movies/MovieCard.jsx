@@ -31,14 +31,10 @@ const MovieCard = ({ movie, onDetails }) => {
       whileHover={{ y: -7 }}
       className="group w-full"
     >
-      {/* =====================================================
-          CARD
-      ====================================================== */}
+      {/* Card */}
 
       <div className="relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/80 shadow-xl shadow-black/10 backdrop-blur-sm transition-all duration-500 group-hover:border-violet-400/30 group-hover:shadow-2xl group-hover:shadow-violet-950/20">
-        {/* ===================================================
-            POSTER
-        ==================================================== */}
+        {/* Poster */}
 
         <div className="relative aspect-[2/3] overflow-hidden">
           <img
@@ -54,9 +50,7 @@ const MovieCard = ({ movie, onDetails }) => {
           {/* Hover overlay */}
           <div className="absolute inset-0 bg-violet-950/10 opacity-0 transition duration-500 group-hover:opacity-100" />
 
-          {/* =================================================
-              TOP BADGES
-          ================================================== */}
+          {/* Top Badges */}
 
           <div className="absolute left-3 right-3 top-3 flex items-center justify-between">
             {/* Rating */}
@@ -74,9 +68,7 @@ const MovieCard = ({ movie, onDetails }) => {
             </div>
           </div>
 
-          {/* =================================================
-              CENTER PLAY BUTTON
-          ================================================== */}
+          {/* Center Play Button */}
 
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.button
@@ -95,9 +87,7 @@ const MovieCard = ({ movie, onDetails }) => {
             </motion.button>
           </div>
 
-          {/* =================================================
-              BOTTOM POSTER CONTENT
-          ================================================== */}
+          {/* Bottom Poster Content */}
 
           <div className="absolute bottom-0 left-0 right-0 p-4">
             <h3 className="line-clamp-1 text-lg font-bold text-white">
@@ -116,9 +106,7 @@ const MovieCard = ({ movie, onDetails }) => {
           </div>
         </div>
 
-        {/* ===================================================
-            CARD FOOTER
-        ==================================================== */}
+        {/* Card Footer */}
 
         <div className="flex items-center justify-between gap-3 px-4 py-3.5">
           {/* Genre */}

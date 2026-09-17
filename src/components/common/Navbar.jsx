@@ -14,7 +14,6 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-
   const location = useLocation()
 
   useEffect(() => {

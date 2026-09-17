@@ -138,18 +138,16 @@ const NewReleaseVideo = ({ shows = [] }) => {
 
   return (
     <section className="relative overflow-hidden bg-[#07070b] py-20 sm:py-24 lg:py-28">
-      {/* =====================================================
-          BACKGROUND GLOW
-          ===================================================== */}
+
+      {/* ---> Background Glow <--- */}
 
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[140px]" />
 
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-fuchsia-600/5 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* =================================================
-            SECTION HEADER
-            ================================================= */}
+
+        {/* ---> Section Header <--- */}
 
         <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
@@ -203,9 +201,7 @@ const NewReleaseVideo = ({ shows = [] }) => {
           </Link>
         </div>
 
-        {/* =================================================
-            FEATURED RELEASE
-            ================================================= */}
+        {/* --->> Featured Releases <<--- */}
 
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
           <AnimatePresence mode="wait">
@@ -308,9 +304,7 @@ const NewReleaseVideo = ({ shows = [] }) => {
                 </div>
               </div>
 
-              {/* =================================================
-                  SLIDER CONTROLS
-                  ================================================= */}
+              {/* --->> Slider Controls <<--- */}
 
               <div className="absolute bottom-6 right-6 z-20 flex items-center gap-2 sm:bottom-10 sm:right-10">
                 <button
@@ -344,9 +338,7 @@ const NewReleaseVideo = ({ shows = [] }) => {
           </AnimatePresence>
         </div>
 
-        {/* =================================================
-            RELEASE THUMBNAILS
-            ================================================= */}
+        {/* Release Thumbnails */}
 
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
           {newReleases.map((movie, index) => (

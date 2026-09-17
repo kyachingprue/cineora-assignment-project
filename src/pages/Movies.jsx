@@ -30,11 +30,7 @@ const Movies = () => {
   // Search popup
   const [showSearchPopup, setShowSearchPopup] = useState(false)
 
-  /*
-   * =========================================================
-   * LOAD ALL SHOWS
-   * =========================================================
-   */
+  // Load All Shows
 
   const loadAllShows = async () => {
     try {
@@ -72,21 +68,13 @@ const Movies = () => {
     }
   }
 
-  /*
-   * =========================================================
-   * INITIAL API CALL
-   * =========================================================
-   */
+  // Initial API Calls
 
   useEffect(() => {
     loadAllShows()
   }, [])
 
-  /*
-   * =========================================================
-   * SEARCH WITH DEBOUNCE
-   * =========================================================
-   */
+  // Search With Debounce
 
   useEffect(() => {
     const query = searchQuery.trim()
@@ -127,31 +115,19 @@ const Movies = () => {
     return () => clearTimeout(timeout)
   }, [searchQuery])
 
-  /*
-   * =========================================================
-   * SEARCH POPUP OPEN
-   * =========================================================
-   */
+  // Search Popup Open
 
   const handleOpenSearch = () => {
     setShowSearchPopup(true)
   }
 
-  /*
-   * =========================================================
-   * SEARCH POPUP CLOSE
-   * =========================================================
-   */
+  // Search Popup Close
 
   const handleCloseSearch = () => {
     setShowSearchPopup(false)
   }
 
-  /*
-   * =========================================================
-   * SELECT SEARCH SUGGESTION
-   * =========================================================
-   */
+  // Select Search Suggestion
 
   const handleSuggestionClick = movie => {
     // Put selected movie name inside search input
@@ -159,17 +135,9 @@ const Movies = () => {
 
     // Close search popup
     setShowSearchPopup(false)
-
-    // IMPORTANT:
-    // Do NOT use setSelectedMovie(movie)
-    // because we don't want details modal here.
   }
 
-  /*
-   * =========================================================
-   * CLEAR SEARCH
-   * =========================================================
-   */
+  // Clear Search
 
   const handleClearSearch = () => {
     setSearchQuery('')
@@ -177,11 +145,7 @@ const Movies = () => {
     setError('')
   }
 
-  /*
-   * =========================================================
-   * RETRY
-   * =========================================================
-   */
+  //  Retry
 
   const handleRetry = () => {
     setSearchQuery('')
@@ -189,11 +153,7 @@ const Movies = () => {
     loadAllShows()
   }
 
-  /*
-   * =========================================================
-   * ESCAPE KEY
-   * =========================================================
-   */
+  // Escape Key
 
   useEffect(() => {
     const handleKeyDown = event => {
@@ -209,11 +169,7 @@ const Movies = () => {
     }
   }, [])
 
-  /*
-   * =========================================================
-   * PREVENT BACKGROUND SCROLL WHEN SEARCH POPUP IS OPEN
-   * =========================================================
-   */
+  // Prevent Background Scroll When Search Popup is Open
 
   useEffect(() => {
     if (showSearchPopup) {
@@ -227,11 +183,7 @@ const Movies = () => {
     }
   }, [showSearchPopup])
 
-  /*
-   * =========================================================
-   * INITIAL LOADING
-   * =========================================================
-   */
+  //  Initial Loading
 
   if (loading && !searchQuery) {
     return <Loading />
@@ -248,9 +200,7 @@ const Movies = () => {
         />
       </Helmet>
       <main className="min-h-screen bg-slate-950 text-white">
-        {/* =====================================================
-          HERO / HEADER
-      ====================================================== */}
+        {/* --->> Hero Header <<---*/}
 
         <section className="relative overflow-hidden border-b border-white/5">
           {/* Background glow */}
@@ -294,9 +244,7 @@ const Movies = () => {
               amazing characters, and highly-rated series.
             </motion.p>
 
-            {/* =================================================
-              SEARCH TRIGGER
-          ================================================== */}
+            {/* Search Trigger */}
 
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -338,9 +286,7 @@ const Movies = () => {
           </div>
         </section>
 
-        {/* =====================================================
-          MOVIE CONTENT
-      ====================================================== */}
+        {/* --->> Movie Content <<--- */}
 
         <section className="relative mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10">
           {/* Section Header */}
@@ -378,9 +324,7 @@ const Movies = () => {
             </button>
           </div>
 
-          {/* ===================================================
-            ERROR
-        ==================================================== */}
+          {/* Error condition */}
 
           {error && (
             <motion.div
@@ -416,9 +360,7 @@ const Movies = () => {
             </motion.div>
           )}
 
-          {/* ===================================================
-            SEARCH LOADING
-        ==================================================== */}
+          {/* Search Loading */}
 
           {searching ? (
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4 xl:grid-cols-5">
@@ -438,9 +380,7 @@ const Movies = () => {
               ))}
             </div>
           ) : movies.length > 0 ? (
-            /* =================================================
-             MOVIE GRID
-          ================================================== */
+            // Movie Card
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -478,9 +418,7 @@ const Movies = () => {
               </motion.div>
             </AnimatePresence>
           ) : (
-            /* =================================================
-             EMPTY STATE
-          ================================================== */
+            // Empty State
 
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
@@ -524,9 +462,7 @@ const Movies = () => {
           )}
         </section>
 
-        {/* =====================================================
-          SEARCH POPUP
-      ====================================================== */}
+        {/* Search Popup */}
 
         <AnimatePresence>
           {showSearchPopup && (
@@ -562,9 +498,7 @@ const Movies = () => {
                 }}
                 className="relative w-full max-w-3xl"
               >
-                {/* =================================================
-                  SEARCH POPUP HEADER
-              ================================================== */}
+                {/* Search Popup Header */}
 
                 <div className="mb-3 flex items-center justify-between">
                   <div>
@@ -587,9 +521,7 @@ const Movies = () => {
                   </button>
                 </div>
 
-                {/* =================================================
-                  SEARCH INPUT
-              ================================================== */}
+                {/* Search Input */}
 
                 <div className="relative">
                   <Search
@@ -627,9 +559,7 @@ const Movies = () => {
                   )}
                 </div>
 
-                {/* =================================================
-                  SUGGESTIONS
-              ================================================== */}
+                {/* Suggestions */}
 
                 <div className="mt-3 overflow-hidden rounded-2xl border border-white/10 bg-[#0e0e15] shadow-2xl shadow-black/60">
                   {/* Header */}

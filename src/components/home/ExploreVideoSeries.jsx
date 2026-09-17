@@ -1,7 +1,6 @@
 import { motion } from 'motion/react'
 import { ArrowRight, Tv } from 'lucide-react'
 import { Link } from 'react-router'
-
 import MovieCard from '../movies/MovieCard'
 
 const fallbackShows = [
@@ -92,9 +91,8 @@ const ExploreVideoSeries = ({ shows = [], onDetails }) => {
 
   return (
     <section className="relative overflow-hidden bg-slate-950 py-20 sm:py-24">
-      {/* =====================================================
-          CINEMATIC BACKGROUND
-      ====================================================== */}
+
+     {/* ---> Cinematic Background <--- */}
 
       {/* Main gradient */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet-950/50 via-slate-950 to-fuchsia-950/40" />
@@ -125,9 +123,8 @@ const ExploreVideoSeries = ({ shows = [], onDetails }) => {
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        {/* =====================================================
-            SECTION HEADER
-        ====================================================== */}
+
+        {/* Section Header */}
 
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -169,9 +166,7 @@ const ExploreVideoSeries = ({ shows = [], onDetails }) => {
           </Link>
         </motion.div>
 
-        {/* =====================================================
-            MOVIE CARDS
-        ====================================================== */}
+        {/* Movie Cards */}
 
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -207,9 +202,7 @@ const ExploreVideoSeries = ({ shows = [], onDetails }) => {
           </div>
         </motion.div>
 
-        {/* =====================================================
-            BOTTOM CTA
-        ====================================================== */}
+        {/* ---> Bottom CTA <--- */}
 
         <motion.div
           initial={{ opacity: 0, y: 25 }}

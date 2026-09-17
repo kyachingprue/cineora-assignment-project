@@ -13,10 +13,7 @@ import { Link } from 'react-router'
 const NotFound = () => {
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-5 py-20">
-      {/* =====================================================
-          BACKGROUND
-      ====================================================== */}
-
+       {/* Background gradient color */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.18),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(217,70,239,0.14),transparent_35%)]" />
 
       {/* Violet Glow */}
@@ -57,9 +54,7 @@ const NotFound = () => {
         }}
       />
 
-      {/* =====================================================
-          FLOATING ICONS
-      ====================================================== */}
+      {/* Floating Icons */}
 
       <motion.div
         animate={{
@@ -106,9 +101,7 @@ const NotFound = () => {
         <Clapperboard size={55} strokeWidth={1} />
       </motion.div>
 
-      {/* =====================================================
-          CONTENT
-      ====================================================== */}
+      {/* Content */}
 
       <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
         {/* 404 */}
@@ -193,9 +186,7 @@ const NotFound = () => {
           existed. Let's get you back to the movie collection.
         </motion.p>
 
-        {/* =====================================================
-            BUTTONS
-        ====================================================== */}
+       {/* Buttons */}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

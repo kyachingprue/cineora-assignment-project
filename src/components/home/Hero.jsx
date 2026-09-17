@@ -187,9 +187,9 @@ const Hero = ({ shows = [] }) => {
 
   return (
     <section className="relative min-h-[calc(100vh-72px)] overflow-hidden bg-black">
-      {/* =====================================================
-          BACKGROUND IMAGE
-      ====================================================== */}
+
+      {/* Background Image */}
+
       <AnimatePresence mode="wait">
         <motion.div
           key={activeShow.id}
@@ -219,9 +219,7 @@ const Hero = ({ shows = [] }) => {
         </motion.div>
       </AnimatePresence>
 
-      {/* =====================================================
-          CINEMATIC OVERLAYS
-      ====================================================== */}
+      {/* ---> Cinematic Overlays <--- */}
 
       {/* Dark overall overlay */}
       <div className="absolute inset-0 bg-black/10" />
@@ -249,9 +247,7 @@ const Hero = ({ shows = [] }) => {
         className="absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-violet-600/20 blur-[120px]"
       />
 
-      {/* =====================================================
-          MAIN CONTENT
-      ====================================================== */}
+     {/* Main Content */}
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl flex-col justify-center px-5 pb-48 pt-24 sm:px-8 lg:px-10">
         <AnimatePresence mode="wait">
@@ -392,9 +388,7 @@ const Hero = ({ shows = [] }) => {
         </AnimatePresence>
       </div>
 
-      {/* =====================================================
-          SLIDER CONTROLS
-      ====================================================== */}
+      {/* Slider Controls */}
 
       <div className="absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-2 lg:flex">
         <button
@@ -416,9 +410,7 @@ const Hero = ({ shows = [] }) => {
         </button>
       </div>
 
-      {/* =====================================================
-          BOTTOM MOVIE CARDS
-      ====================================================== */}
+      {/* Bottom Movie Cards */}
 
       <div className="absolute bottom-0 left-0 right-0 z-20">
         <div className="mx-auto max-w-7xl px-5 pb-6 sm:px-8 lg:px-10">
